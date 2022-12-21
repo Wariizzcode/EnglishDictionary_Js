@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<style>
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container h3{
+        text-shadow: 3px 3px dodgerblue;
+        text-transform:uppercase;
+        color: white;
+        font-weight: bolder;
+        font-style:italic;
+        
+        
+    }
+
+input{
+        width: 50%;
+        border-bottom: 3px solid dodgerblue;
+        border-right: none;
+        border-left: none;
+        border-top: none;
+        outline: none;
+    }
+
+    .frm{
+        margin-top: 100px;
+    }
+
+    .frm a{
+        color: navy;
+        margin: 12px;
+    }
+
+  .frm a i:hover{
+        color: dodgerblue;
+       
+    }
+
+    em{
+        float: right;
+        padding-right: 18px;
+        font-size: 15px;
+    }
+
+    .frm a:hover{
+        color:dodgerblue;
+    }
+
+    .frm i{
+        font-size: 15px;
+    }
+
+
+
+
+
+
+
+
+</style>
+<body>
+    <em id="clk"></em>
+    <div class="container text-center my-5">
+        <div class="header">
+            <h3>Dictionary</h3>
+            <div class="frm"> 
+                <input type="text" placeholder="Search a word" name="" id="input">
+                  <button onclick="submit()"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="show">
+            
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+
+
+
+
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
