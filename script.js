@@ -1,57 +1,54 @@
 
-setInterval(()=>{
-    let todate= new Date();
-    let hours = todate.getHours();
-    let minutes = todate.getMinutes(); 
-    let seconds= todate.getSeconds()
-    document.getElementById('clk').innerHTML=`${hours}: ${minutes} : ${seconds}`;
+// setInterval(()=>{
+//     let todate= new Date();
+//     let hours = todate.getHours();
+//     let minutes = todate.getMinutes(); 
+//     let seconds= todate.getSeconds()
+//     document.getElementById('clk').innerHTML=`${hours}: ${minutes} : ${seconds}`;
 
 
-}, 1000)
+// }, 1000)
+
+function empty_example(empty){
+    if (empty == undefined){
+        empty = ""
+    }
+
+    else{
+        empty = "Example" + empty
+    }
+}
 
 
-
-
-
-
-
-as function submit(){
     let input = document.getElementById("input")
     let show = document.getElementById("show")
 
-    let results = await fetch("https://api.dictionaryapi.dev/api/v2/entries/en/"+input.value);
-
-    // console.log(results.length)
-    let data = await results.json()
-    console.log(data)
-
-//  let shower = "";
-//  for(let i =0;i<data[0].length;i++){
-    show.innerHTML = `
-            <div class="container">
-                <b>
-                    <i class="fas fa-volume"></i>
-                    <audio controls autoplay><source src="${data[0].meaning}"></audio>
-                </b>
-                <h2>Transcription:<span></span></h2>
-                <h2>Part of speech:<span></span></h2>
-                <h2>Meaning:<span></span></h2>
-                <h2>Example:<span></span></h2>
-
-            </div>
+   function submit(){
+ fetch("https://api.dictionaryapi.dev/api/v2/entries/en/"+input.value)
+ .then(res => res.json())
+ .then(data =>{
+    let results = "";
+    for(let i = 0 ; i < data[0].meanings.length ; i++){
+        results += `
+                <div class="container-item m-3">
+                    <b>
+                        <i class="fas fa-volume"></i>
+                        <audio controls autoplay><source src="${data[0].phonetics[0].audio}"></audio>
+                    </b> <br><br>
+                    <h5>Transcription:<span>${data[0].phonetics[1].text}</span></h5>
+                    <header>Part of speech:<span>${data[0].meanings[i].partOfSpeech}</span></header><br>
+                    <h5>Meaning:<span>${data[0].meanings[i].definitions[0].definition}</span></h5>
+                    <p>Example:<span> ${empty_example(data[0].meanings[i].definitions[0].example)}</span></p> <hr>
+                </div>
+        
+        `
+        }
+        show.innerHTML = results;
+ })
+   
+// 
     
-    `
-    // show.innerHTML = shower;
  }
  
 
-// function empty_example(empty){
-//     if (empty == undefined){
-//         empty = ""
-//     }
-
-//     else{
-//         empty = "Example" + empty
-//     }
-// }
-//  <i style="margin: 15px;" class="fas fa-volume-up" onclick="vol()"></i>
+  

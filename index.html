@@ -12,58 +12,78 @@
 
 *{
     padding: 0;
+    font-family: poppins;
     margin: 0;
     box-sizing: border-box;
 }
 
-.container h3{
-        text-shadow: 3px 3px dodgerblue;
-        text-transform:uppercase;
+body{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/books-2596809_1280.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+}
+
+#input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+#input:focus{
+    background-color: whitesmoke;
+}
+    .sub{
+        border: none;
+        padding: 10px 20px;
         color: white;
-        font-weight: bolder;
-        font-style:italic;
-        
-        
+        background-color: blue;
     }
-
-input{
-        width: 50%;
-        border-bottom: 3px solid dodgerblue;
-        border-right: none;
-        border-left: none;
-        border-top: none;
-        outline: none;
-    }
-
-    .frm{
-        margin-top: 100px;
-    }
-
-    .frm a{
-        color: navy;
-        margin: 12px;
-    }
-
-  .frm a i:hover{
-        color: dodgerblue;
-       
-    }
-
-    em{
-        float: right;
-        padding-right: 18px;
+    
+.time p{
+        position: absolute;
+        right: 50px;
         font-size: 15px;
+        color: white;
+        padding: 7px 12px;
+        background-color: navy;
     }
 
-    .frm a:hover{
-        color:dodgerblue;
+    .time em{
+        font-style: normal;
     }
 
-    .frm i{
-        font-size: 15px;
+    .shadow{
+        background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
+    }
+
+    .container-dic{
+        padding-top:50px;
+        padding: 30px;
     }
 
 
+    .container-item header{
+        font-size: 19px;
+        font-weight: bold;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .container-item h5{
+        font-weight: bold;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .container-item span{
+        font-weight: normal;
+        margin:10px;
+    }
+   
 
 
 
@@ -72,16 +92,21 @@ input{
 
 </style>
 <body>
-    <em id="clk"></em>
-    <div class="container text-center my-5">
-        <div class="header">
-            <h3>Dictionary</h3>
-            <div class="frm"> 
-                <input type="text" placeholder="Search a word" name="" id="input">
-                  <button onclick="submit()"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="show">
-            
+        <!-- <div class="time">
+            <p>Time: <em id="clk" class="my-3"></em></p>
+        </div>
+            -->
+    <div class="container mt-5 container-dic">
+        <div class="header mt-5 row">
+            <div class="col-md-6 offset-md-3 text-white py-4 p-3 shadow">
+                <h2 class="text-center text-capitalize">English Dictionary</h2> <hr>
+                <div class="d-flex my-4 m-3"> 
+                      <input type="text" placeholder="Search a word" name="" id="input">
+                      <button type="submit" class="sub" onclick="submit()">Search</button>
+                </div>
+                <div id="show">
+                    <!-- word -->
+                </div>
             </div>
         </div>
     </div>
