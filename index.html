@@ -18,7 +18,7 @@
 }
 
 body{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/books-2596809_1280.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(images/books-2596809_1280.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -27,82 +27,88 @@ body{
     width: 100%;
 }
 
-#input{
-    width: 100%;
+.input-fieldd input{
+    width:100%;
+    padding: 0.4rem 1rem;
     border: none;
+    font-size:0.8rem;
+    border-radius:0.4em;
     outline: none;
-    padding: 10px;
 }
 
-#input:focus{
+.input-fieldd input:focus{
     background-color: whitesmoke;
 }
-    .sub{
+
+    .input-fieldd button{
+        border-radius:0.4em;
+        color: white;
         border: none;
-        padding: 10px 20px;
-        color: white;
-        background-color: blue;
-    }
-    
-.time p{
-        position: absolute;
-        right: 50px;
-        font-size: 15px;
-        color: white;
-        padding: 7px 12px;
-        background-color: navy;
+        margin: 0 5px;
+        padding:8px 17px;
+        background-color: black;
     }
 
-    .time em{
-        font-style: normal;
+    .input-fieldd button span{
+          font-size: 15px;
+          
     }
 
-    .shadow{
+    .shadow-lg{
+        border-radius:7px;
         background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 
     }
-
     .container-dic{
-        padding-top:50px;
-        padding: 30px;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+   
     }
 
-
     .container-item header{
-        font-size: 19px;
+        font-size:1.2rem;
+        font-family: Georgia, 'Times New Roman', Times, serif;
         font-weight: bold;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    audio{
+        outline: none;
+        font-size: 1px;
+        width: 100%;
+        height:2.7rem;
+        margin-bottom: 12px;
     }
 
     .container-item h5{
         font-weight: bold;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-size: 1.2em;
     }
 
     .container-item span{
         font-weight: normal;
         margin:10px;
+        font-size:1em;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-   
 
-
-
-
-
-
+    .header h2{
+        font-size:1.4rem;
+    }
 </style>
+
 <body>
         <!-- <div class="time">
             <p>Time: <em id="clk" class="my-3"></em></p>
         </div>
             -->
-    <div class="container mt-5 container-dic">
+    <div class="container container-dic p-4">
         <div class="header mt-5 row">
-            <div class="col-md-6 offset-md-3 text-white py-4 p-3 shadow">
-                <h2 class="text-center text-capitalize">English Dictionary</h2> <hr>
-                <div class="d-flex my-4 m-3"> 
-                      <input type="text" placeholder="Search a word" name="" id="input">
-                      <button type="submit" class="sub" onclick="submit()">Search</button>
+            <div class="col-md-4 offset-md-3 mx-auto text-white px-0 py-4 shadow-lg">
+                <h2 class="text-center mb-3">English Dictionary</h2> 
+                <div class="d-flex p-3 input-fieldd"> 
+                      <input type="text" placeholder="Search a word...." id="input" name="">
+                      <button type="submit" onclick="submit()"> <span>Search</span></button>
                 </div>
                 <div id="show">
                     <!-- word -->
@@ -110,9 +116,6 @@ body{
             </div>
         </div>
     </div>
-
-
-    
 
 
 
